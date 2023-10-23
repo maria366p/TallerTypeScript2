@@ -36,7 +36,7 @@ function mostrarPromedioTemporadas(series) {
         // Crear una fila de resumen para el promedio
         var promedioRow = document.createElement("tr");
         promedioRow.innerHTML =
-            "\n        <td colspan=\"4\" class = \"no_bold\" >Seasons Average: ".concat(promedioTemporadas.toFixed(2), "</td>\n        ");
+            "\n        <td colspan=\"4\" class = \"no_bold\" >Seasons Average: ".concat(promedioTemporadas.toFixed(0), "</td>\n        ");
         // Insertar la fila de resumen al final de la tabla
         tbodyElement.appendChild(promedioRow);
     }

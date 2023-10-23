@@ -63,7 +63,7 @@ function mostrarPromedioTemporadas(series: Serie[]): void {
         let promedioRow: HTMLElement = document.createElement("tr");
         promedioRow.innerHTML =
         `
-        <td colspan="4" class = "no_bold" >Seasons Average: ${promedioTemporadas.toFixed(2)}</td>
+        <td colspan="4" class = "no_bold" >Seasons Average: ${promedioTemporadas.toFixed(0)}</td>
         `;
 
         // Insertar la fila de resumen al final de la tabla

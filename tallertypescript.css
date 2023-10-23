@@ -22,14 +22,11 @@
 
 /* Estilo para que la tabla ocupe media pantalla */
 #series {
-    width: 50%; /* Ajusta el ancho al 50% del contenedor padre (la mitad de la pantalla) */
+    width: 30%; /* Ajusta el ancho al 50% del contenedor padre (la mitad de la pantalla) */
     margin: 0 auto; /* Centra la tabla horizontalmente en la pantalla */
+    float: left;
 }
 
-/* Alinear la tabla a la izquierda de la página */
-#series-container table {
-    text-align: left; /* Alinea el contenido a la izquierda */
-}
 
 /* Estilo para la fila de promedio de temporadas */
 .no-bold {
