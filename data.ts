@@ -25,13 +25,12 @@ export const series = [new Serie(1,"Breaking Bad","AMC", 5,"Set and filmed in Al
 
 //Invocar el elemento html que contiene el html para la tabla series
 let seriesTable: HTMLElement = document.getElementById("series")!;
-// Obtener el contenedor de la tabla
-const seriesContainer = document.getElementById("series-container");
 
 
 
-mostrarSeries(series)
-mostrarPromedioTemporadas(series)
+
+mostrarSeries(series);
+mostrarPromedioTemporadas(series);
 
 function mostrarSeries(series:Serie[]):void{
     let seriesTbody: HTMLElement = document.createElement("tbody");
@@ -71,6 +70,52 @@ function mostrarPromedioTemporadas(series: Serie[]): void {
     }
 }
 
+function mostrarDetalleSerie(series: Serie[]) {
+    // Obtener todas las celdas de la columna "Name"
+    const nameCells = document.querySelectorAll("#series tbody tr td:nth-child(2)");
+    
+
+    // Agregar un evento de clic a cada celda de la columna "Name"
+    nameCells.forEach((cell, index) => {
+        cell.addEventListener("click", () => {
+            // Obtener la serie correspondiente desde el arreglo "series"
+            const serie = series[index];
+
+            // Actualizar el contenido de la tarjeta con la información de la serie
+            // Obtener el elemento de la imagen de la tarjeta
+            const serieImagen = document.getElementById("serie-imagen") as HTMLImageElement;
+
+            serieImagen.src = serie.linkImagen; // Establecer la URL de la imagen
+            
+
+            const serieNombre = document.getElementById("serie-nombre");
+
+            if (serieNombre) {
+                serieNombre.textContent = serie.nombreSerie;
+            }
+
+            const serieDescripcion = document.getElementById("serie-descripcion");
+            if (serieDescripcion) {
+                serieDescripcion.textContent = serie.descripcion;
+            }
+
+            const serieLink = document.getElementById("serie-link") as HTMLAnchorElement;
+            if (serieLink) {
+                serieLink.href = serie.linkStreaming;
+                serieLink.textContent = serie.linkStreaming;
+            }
+        });
+    });
+}
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Este código se ejecutará cuando el DOM se haya cargado completamente.
+
+    // Llamar a la función mostrarDetalleSerie
+    mostrarDetalleSerie(series);
+});
 
 
 

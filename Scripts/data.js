@@ -11,8 +11,6 @@ export var series = [new Serie(1, "Breaking Bad", "AMC", 5, "Set and filmed in A
     new Serie(6, "A Very English Scandal", "BBC", 2, "A Very English Scandal is a fact-based three-part British television comedy-drama miniseries based on John Preston's book of the same name.", "https://www.bbc.co.uk/programmes/p065smy4", "https://i.imgur.com/D4y3DrQ.jpg")];
 //Invocar el elemento html que contiene el html para la tabla series
 var seriesTable = document.getElementById("series");
-// Obtener el contenedor de la tabla
-var seriesContainer = document.getElementById("series-container");
 mostrarSeries(series);
 mostrarPromedioTemporadas(series);
 function mostrarSeries(series) {
@@ -41,3 +39,36 @@ function mostrarPromedioTemporadas(series) {
         tbodyElement.appendChild(promedioRow);
     }
 }
+function mostrarDetalleSerie(series) {
+    // Obtener todas las celdas de la columna "Name"
+    var nameCells = document.querySelectorAll("#series tbody tr td:nth-child(2)");
+    // Agregar un evento de clic a cada celda de la columna "Name"
+    nameCells.forEach(function (cell, index) {
+        cell.addEventListener("click", function () {
+            // Obtener la serie correspondiente desde el arreglo "series"
+            var serie = series[index];
+            // Actualizar el contenido de la tarjeta con la información de la serie
+            // Obtener el elemento de la imagen de la tarjeta
+            var serieImagen = document.getElementById("serie-imagen");
+            serieImagen.src = serie.linkImagen; // Establecer la URL de la imagen
+            var serieNombre = document.getElementById("serie-nombre");
+            if (serieNombre) {
+                serieNombre.textContent = serie.nombreSerie;
+            }
+            var serieDescripcion = document.getElementById("serie-descripcion");
+            if (serieDescripcion) {
+                serieDescripcion.textContent = serie.descripcion;
+            }
+            var serieLink = document.getElementById("serie-link");
+            if (serieLink) {
+                serieLink.href = serie.linkStreaming;
+                serieLink.textContent = serie.linkStreaming;
+            }
+        });
+    });
+}
+document.addEventListener("DOMContentLoaded", function () {
+    // Este código se ejecutará cuando el DOM se haya cargado completamente.
+    // Llamar a la función mostrarDetalleSerie
+    mostrarDetalleSerie(series);
+});

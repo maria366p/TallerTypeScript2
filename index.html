@@ -11,17 +11,29 @@
 </head>
 <body>
     <h1 id="tv-series-header" >TV Series Ranking</h1>
-    <div class = "table-responsive" id="series-container">
-        <table class="table table-striped" id="series">
-            <thead class = "thead-dark">
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Channel</th>
-                    <th scope="col">Seasons</th>
-                </tr>
-            </thead>
-        </table>
+    <div class="container">
+        <div class = "table-responsive" id="series-container">
+            <table class="table table-striped" id="series">
+                <thead class = "thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Channel</th>
+                        <th scope="col">Seasons</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <!-- Div para mostrar el detalle de la serie -->
+        <div class="card">
+            <img class="card-img-top" id="serie-imagen" src="" alt="Serie Imagen">
+            <div class="card-body">
+                <h5 class="card-title" id="serie-nombre"></h5>
+                <p class="card-text" id="serie-descripcion"></p>
+                <a href="#" id="serie-link"></a>
+            </div>
+        </div>
     </div>
+
 </body>
 </html>
