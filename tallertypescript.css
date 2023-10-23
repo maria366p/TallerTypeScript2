@@ -1,0 +1,44 @@
+/* ECeldas de la tabla con ID "series" */
+#series tbody tr {
+    background-color: #f5f5f5; /* Fondo gris claro */
+    
+}
+
+/* Encabezados de la tabla con ID "series" */
+#series thead th {
+    background-color: #ffffff; /* Fondo blanco */
+    color: #000000; /* Texto en negro */
+}
+
+/* Agrega una clase específica para la negrilla en la primera columna */
+.bold-first-column {
+    font-weight: bold;
+}
+/* Poner en azul claro las celdas de la segunda columna */
+#series tbody tr td:nth-child(2) {
+    color: #0095ff; 
+    
+}
+
+/* Estilo para que la tabla ocupe media pantalla */
+#series {
+    width: 50%; /* Ajusta el ancho al 50% del contenedor padre (la mitad de la pantalla) */
+    margin: 0 auto; /* Centra la tabla horizontalmente en la pantalla */
+}
+
+/* Alinear la tabla a la izquierda de la página */
+#series-container table {
+    text-align: left; /* Alinea el contenido a la izquierda */
+}
+
+/* Estilo para la fila de promedio de temporadas */
+.no-bold {
+    font-weight: normal !important; /* Elimina la negrilla */
+}
+
+/* Estilo para el encabezado "TV Series" */
+#tv-series-header {
+    background-color: #007777; /* Cambia este valor al color aguamarina oscuro deseado */
+    padding: 10px; /* Añade espacio alrededor del texto para mejorar la apariencia */
+}
+

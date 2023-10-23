@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "target": "ES5", //Versión de java para los navegadores, actualmente soportan esta
+        "module": "ES6",
+        "outDir": "./Scripts", //Carpeta donde guardar el compilador
+        "rootDir": "./",
+        "strict": true, //pARA QUE SEA ESTRICTO CON EL TIPO DE VARIABLES
+        "alwaysStrict": true
+    }
+}
